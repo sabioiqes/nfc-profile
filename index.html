@@ -1,0 +1,38 @@
+// シンプルなプロフィールコンポーネント
+export default function Profile() {
+  const links = [
+    { name: "Twitter (X)", url: "https://twitter.com/your_id" },
+    { name: "GitHub", url: "https://github.com/your_id" },
+    { name: "Portfolio", url: "https://your-portfolio.com" },
+  ];
+
+  return (
+    <div style={{
+      display: 'flex', flexDirection: 'column', alignItems: 'center',
+      padding: '40px 20px', fontFamily: 'sans-serif', textAlign: 'center'
+    }}>
+      <div style={{
+        width: '100px', height: '100px', borderRadius: '50%',
+        backgroundColor: '#ddd', marginBottom: '20px'
+      }} />
+      <h1 style={{ fontSize: '24px', margin: '0 0 10px' }}>Your Name</h1>
+      <p style={{ color: '#666', marginBottom: '30px' }}>Designer / Developer</p>
+      
+      <div style={{ width: '100%', maxWidth: '300px' }}>
+        {links.map((link) => (
+          <a
+            key={link.name}
+            href={link.url}
+            style={{
+              display: 'block', padding: '15px', marginBottom: '10px',
+              backgroundColor: '#000', color: '#fff', textDecoration: 'none',
+              borderRadius: '8px', fontWeight: 'bold'
+            }}
+          >
+            {link.name}
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+}
