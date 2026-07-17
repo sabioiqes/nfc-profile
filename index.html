@@ -1,38 +1,125 @@
-// シンプルなプロフィールコンポーネント
-export default function Profile() {
-  const links = [
-    { name: "Twitter (X)", url: "https://x.com/C0MM0NReeD" },
-    { name: "GitHub", url: "https://github.com/your_id" },
-    { name: "Portfolio", url: "https://your-portfolio.com" },
-  ];
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>講師プロフィール & リンク集</title>
+  
+  <!-- 可読性の高いWebフォント（丸ゴシック）を読み込み（UDフォントがない環境用） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
 
-  return (
-    <div style={{
-      display: 'flex', flexDirection: 'column', alignItems: 'center',
-      padding: '40px 20px', fontFamily: 'sans-serif', textAlign: 'center'
-    }}>
-      <div style={{
-        width: '100px', height: '100px', borderRadius: '50%',
-        backgroundColor: '#ddd', marginBottom: '20px'
-      }} />
-      <h1 style={{ fontSize: '24px', margin: '0 0 10px' }}>Your Name</h1>
-      <p style={{ color: '#666', marginBottom: '30px' }}>Designer / Developer</p>
-      
-      <div style={{ width: '100%', maxWidth: '300px' }}>
-        {links.map((link) => (
-          <a
-            key={link.name}
-            href={link.url}
-            style={{
-              display: 'block', padding: '15px', marginBottom: '10px',
-              backgroundColor: '#000', color: '#fff', textDecoration: 'none',
-              borderRadius: '8px', fontWeight: 'bold'
-            }}
-          >
-            {link.name}
-          </a>
-        ))}
-      </div>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      /* UDフォント・ゴシック体を最優先にし、なければWebフォントを適用 */
+      font-family: "BIZ UDPGothic", "UD DigiKyo Latin", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "M PLUS Rounded 1c", sans-serif;
+      text-align: center;
+      background-color: #88cb9d; /* メインカラー（背景） */
+      color: #333;
+      margin: 0;
+    }
+    .profile-card {
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      padding: 30px 20px;
+      width: 100%;
+      max-width: 340px;
+      box-sizing: border-box;
+      margin-bottom: 25px;
+    }
+    .avatar-container {
+      width: 110px;
+      height: 110px;
+      margin: 0 auto 15px;
+    }
+    .avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #88cb9d; /* メインカラー（枠線） */
+    }
+    h1 {
+      font-size: 22px;
+      margin: 0 0 8px 0;
+      font-weight: 700;
+      color: #111827;
+    }
+    .title {
+      font-size: 13px;
+      color: #559169; /* メインカラーを少し濃くして文字色に */
+      font-weight: 600;
+      margin: 0 0 15px 0;
+      letter-spacing: 0.05em;
+    }
+    .bio {
+      font-size: 14px;
+      color: #4b5563;
+      line-height: 1.6;
+      margin: 0;
+      text-align: left;
+      background: #f4f6f5;
+      padding: 14px;
+      border-radius: 8px;
+    }
+    .links-container {
+      width: 100%;
+      max-width: 340px;
+      box-sizing: border-box;
+    }
+    .btn {
+      display: block;
+      padding: 16px;
+      margin-bottom: 14px;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: bold;
+      font-size: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* 文字の視認性アップ */
+    }
+    /* ボタンごとのブランドカラーを設定 */
+    .btn-hp {
+      background-color: #88cb9d; /* メインカラー */
+      border: 2px solid #ffffff; /*背景と同化しないよう白枠を追加 */
+    }
+    .btn-x {
+      background-color: #89c3ed; /* アクセントカラー1 */
+    }
+    .btn-lineworks {
+      background-color: #f7b977; /* アクセントカラー2 */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- プロフィールセクション -->
+  <div class="profile-card">
+    <div class="avatar-container">
+      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&q=80" alt="プロフィール画像" class="avatar">
     </div>
-  );
-}
+    <h1>木築 悠斗</h1>
+    <div class="title"> 塾長 / 講師</div>
+    <p class="bio">
+      立命館大学理工学部数理科学科卒業。高IQ団体「JAPAN MENSA」会員。個別指導塾で講師として11年間勤務。中学生を中心に、小学1年生から高校3年生まで幅広く指導。
+    </p>
+  </div>
+
+  <!-- リンク集（ボタン）セクション -->
+  <div class="links-container">
+    <!-- 「href="..."」の右側にあるURLをご自身の実際のURLに書き換えてください -->
+    <a href="https://phragmitescore.wixsite.com/common-reed" class="btn btn-hp" target="_blank">🏠 塾の公式ホームページ</a>
+    <a href="https://x.com/C0MM0NReeD" target="_blank">𝕏 公式X (旧Twitter)</a>
+    <a href="https://works.do/R/ti/p/yuto@common-reed" class="btn btn-lineworks" target="_blank">💬 公式LINEWORKSアカウント</a>
+  </div>
+
+</body>
+</html>
