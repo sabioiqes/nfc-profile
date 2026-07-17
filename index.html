@@ -10,16 +10,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
 
-  <style>
+  
+</head>
+<body><style>
     body {
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 40px 20px;
-      /* UDフォント・ゴシック体を最優先にし、なければWebフォントを適用 */
       font-family: "BIZ UDPGothic", "UD DigiKyo Latin", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "M PLUS Rounded 1c", sans-serif;
       text-align: center;
-      background-color: #88cb9d; /* メインカラー（背景） */
+      background-color: #88cb9d;
       color: #333;
       margin: 0;
     }
@@ -43,7 +44,7 @@
       height: 100%;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid #88cb9d; /* メインカラー（枠線） */
+      border: 3px solid #88cb9d;
     }
     h1 {
       font-size: 22px;
@@ -53,7 +54,7 @@
     }
     .title {
       font-size: 13px;
-      color: #559169; /* メインカラーを少し濃くして文字色に */
+      color: #559169;
       font-weight: 600;
       margin: 0 0 15px 0;
       letter-spacing: 0.05em;
@@ -73,33 +74,34 @@
       max-width: 340px;
       box-sizing: border-box;
     }
+    
+    /* どのリンクも強制的に同じ形の「四角いボタン」にする設定 */
     .btn {
-      display: block;
-      padding: 16px;
-      margin-bottom: 14px;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 12px;
-      font-weight: bold;
-      font-size: 15px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      box-sizing: border-box;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* 文字の視認性アップ */
+      display: block !important;
+      width: 100% !important;
+      padding: 16px 10px !important;
+      margin-bottom: 14px !important;
+      text-decoration: none !important;
+      border-radius: 12px !important;
+      font-weight: bold !important;
+      font-size: 15px !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+      box-sizing: border-box !important;
     }
-    /* ボタンごとのブランドカラーを設定 */
     .btn-hp {
-      background-color: #88cb9d; /* メインカラー */
-      border: 2px solid #ffffff; /*背景と同化しないよう白枠を追加 */
+      background-color: #88cb9d !important;
+      color: #ffffff !important;
+      border: 2px solid #ffffff !important;
     }
     .btn-x {
-      background-color: #89c3ed; /* アクセントカラー1 */
+      background-color: #89c3ed !important;
+      color: #222222 !important;
     }
     .btn-lineworks {
-      background-color: #f7b977; /* アクセントカラー2 */
+      background-color: #f7b977 !important;
+      color: #222222 !important;
     }
   </style>
-</head>
-<body>
 
   <!-- プロフィールセクション -->
   <div class="profile-card">
